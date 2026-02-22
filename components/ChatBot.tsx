@@ -54,7 +54,7 @@ export default function ChatBot() {
         aria-label="Open chat"
         style={{
           position: 'fixed', bottom: 100, right: 28, zIndex: 9997,
-          width: 54, height: 54, borderRadius: '50%', border: 'none',
+          width: 54, height: 54, borderRadius: '50%',
           background: open
             ? 'var(--accent-violet)'
             : 'linear-gradient(135deg, var(--bg-secondary), var(--bg-secondary))',
