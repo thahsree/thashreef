@@ -1,3 +1,4 @@
+import BusinessWebsitesSection from '@/components/BusinessWebsitesSection';
 import FeaturedProjects from '@/components/FeaturedProjects';
 import Hero from '@/components/Hero';
 import Skills from '@/components/Skills';
@@ -12,6 +13,7 @@ export default function HomePage() {
       <Skills />
       <TechStack />
       <FeaturedProjects />
+      <BusinessWebsitesSection />
     </>
   );
 }
