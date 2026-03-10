@@ -7,20 +7,100 @@ export default function ContactPage() {
   const [orderForm, setOrderForm] = useState({ name: '', email: '', projectType: '', budget: '', timeline: '', description: '' });
   const [contactSent, setContactSent] = useState(false);
   const [orderSent, setOrderSent] = useState(false);
+  const [isSubmittingContact, setIsSubmittingContact] = useState(false);
+  const [isSubmittingOrder, setIsSubmittingOrder] = useState(false);
+  const [contactError, setContactError] = useState('');
+  const [orderError, setOrderError] = useState('');
 
-  const handleContact = (e: React.FormEvent) => {
+  const handleContact = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In production, connect to EmailJS or backend API
-    setContactSent(true);
-    setTimeout(() => setContactSent(false), 4000);
-    setContactForm({ name: '', email: '', subject: '', message: '' });
+    setIsSubmittingContact(true);
+    setContactError('');
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+          from_name: 'Portfolio Contact Form',
+          subject: contactForm.subject || 'New Message from Portfolio',
+          name: contactForm.name,
+          email: contactForm.email,
+          message: contactForm.message,
+        })
+      });
+
+      const result = await response.json();
+      
+      if (result.success) {
+        setContactSent(true);
+        setContactForm({ name: '', email: '', subject: '', message: '' });
+        setTimeout(() => setContactSent(false), 5000);
+      } else {
+        setContactError(result.message || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setContactError('Failed to send message. Please check your connection.');
+    } finally {
+      setIsSubmittingContact(false);
+    }
   };
 
-  const handleOrder = (e: React.FormEvent) => {
+  const handleOrder = async (e: React.FormEvent) => {
     e.preventDefault();
-    setOrderSent(true);
-    setTimeout(() => setOrderSent(false), 4000);
-    setOrderForm({ name: '', email: '', projectType: '', budget: '', timeline: '', description: '' });
+    setIsSubmittingOrder(true);
+    setOrderError('');
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+          from_name: 'Portfolio Project Order',
+          subject: `New Project Request: ${orderForm.projectType}`,
+          name: orderForm.name,
+          email: orderForm.email,
+          projectType: orderForm.projectType,
+          budget: orderForm.budget,
+          timeline: orderForm.timeline,
+          description: orderForm.description,
+          message: `
+            Name: ${orderForm.name}
+            Email: ${orderForm.email}
+            Project Type: ${orderForm.projectType}
+            Budget: ${orderForm.budget}
+            Timeline: ${orderForm.timeline}
+            
+            Description:
+            ${orderForm.description}
+          `
+        })
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setOrderSent(true);
+        setOrderForm({ name: '', email: '', projectType: '', budget: '', timeline: '', description: '' });
+        setTimeout(() => setOrderSent(false), 5000);
+      } else {
+        setOrderError(result.message || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting order:', error);
+      setOrderError('Failed to send order request. Please check your connection.');
+    } finally {
+      setIsSubmittingOrder(false);
+    }
   };
 
   return (
@@ -49,7 +129,7 @@ export default function ContactPage() {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 16, marginBottom: 40 }}>
                 {[
-                  { icon: Mail, label: 'Email', value: 'thashreef@email.com', href: 'mailto:thashreef@email.com', color: 'var(--accent-cyan)' },
+                  { icon: Mail, label: 'Email', value: 'chthashreef22@email.com', href: 'mailto:chthashreef22@email.com', color: 'var(--accent-cyan)' },
                   { icon: Phone, label: 'WhatsApp', value: '+91 7025504042', href: 'https://wa.me/917025504042', color: 'var(--accent-green)' },
                   { icon: MapPin, label: 'Location', value: 'Kerala, India', href: null, color: 'var(--accent-pink)' },
                   { icon: Briefcase, label: 'Status', value: 'Available for Freelance', href: null, color: 'var(--accent-violet)' },
@@ -74,8 +154,8 @@ export default function ContactPage() {
               <h3 style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '1rem', marginBottom: 16, color: 'var(--text-secondary)' }}>CONNECT ON</h3>
               <div style={{ display: 'flex', gap: 14 }}>
                 {[
-                  { icon: Github, href: 'https://github.com/thashreef', label: 'GitHub', color: 'var(--text-primary)' },
-                  { icon: Linkedin, href: 'https://linkedin.com/in/thashreef', label: 'LinkedIn', color: '#0a66c2' },
+                  { icon: Github, href: 'https://github.com/thahsree', label: 'GitHub', color: 'var(--text-primary)' },
+                  { icon: Linkedin, href: 'www.linkedin.com/in/thashreefch', label: 'LinkedIn', color: '#0a66c2' },
                   { icon: MessageCircle, href: 'https://wa.me/917025504042', label: 'WhatsApp', color: '#25d366' },
                 ].map(s => (
                   <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" title={s.label}
@@ -142,8 +222,9 @@ export default function ContactPage() {
                       <label className="form-label">Message *</label>
                       <textarea className="form-input" rows={5} placeholder="Your message..." required value={contactForm.message} onChange={e => setContactForm(f => ({ ...f, message: e.target.value }))} style={{ resize: 'vertical' }} />
                     </div>
-                    <button type="submit" className="btn-primary" style={{ alignSelf: 'flex-start' }}>
-                      <Send size={16} /> Send Message
+                    {contactError && <div style={{ color: 'var(--accent-pink)', fontSize: '0.85rem' }}>{contactError}</div>}
+                    <button type="submit" className="btn-primary" style={{ alignSelf: 'flex-start', opacity: isSubmittingContact ? 0.7 : 1 }} disabled={isSubmittingContact}>
+                      {isSubmittingContact ? 'Sending...' : <><Send size={16} /> Send Message</>}
                     </button>
                   </form>
                 )}
@@ -214,8 +295,9 @@ export default function ContactPage() {
                       <label className="form-label">Project Description *</label>
                       <textarea className="form-input" rows={5} placeholder="Describe your project — what it should do, who it's for, any design preferences, etc." required value={orderForm.description} onChange={e => setOrderForm(f => ({ ...f, description: e.target.value }))} style={{ resize: 'vertical' }} />
                     </div>
-                    <button type="submit" className="btn-primary" style={{ alignSelf: 'flex-start', background: 'linear-gradient(135deg, var(--accent-pink), #f59e0b)' }}>
-                      <Briefcase size={16} /> Submit Project Order
+                    {orderError && <div style={{ color: 'var(--accent-pink)', fontSize: '0.85rem' }}>{orderError}</div>}
+                    <button type="submit" className="btn-primary" style={{ alignSelf: 'flex-start', background: 'linear-gradient(135deg, var(--accent-pink), #f59e0b)', opacity: isSubmittingOrder ? 0.7 : 1 }} disabled={isSubmittingOrder}>
+                      {isSubmittingOrder ? 'Submitting...' : <><Briefcase size={16} /> Submit Project Order</>}
                     </button>
                   </form>
                 )}

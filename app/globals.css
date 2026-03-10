@@ -27,7 +27,7 @@
 
 /* === Reset === */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; overflow-x: hidden; }
+html { scroll-behavior: smooth; overflow-x: hidden; color-scheme: dark; }
 body {
   font-family: var(--font-body);
   background: var(--bg-primary);
@@ -312,6 +312,10 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: 700; }
   box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
 }
 .form-input::placeholder { color: var(--text-muted); }
+.form-input option {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+}
 .form-label {
   display: block;
   font-size: 0.85rem;

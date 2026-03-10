@@ -1,5 +1,5 @@
 'use client';
-import { ArrowRight, ChevronDown, Download, Github, Linkedin } from 'lucide-react';
+import { ArrowRight, ChevronDown, Github, Linkedin } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 
@@ -100,9 +100,9 @@ export default function Hero() {
             <Link href="/contact" className="btn-outline">
               Hire Me
             </Link>
-            <a href="/cv.pdf" download className="btn-outline" style={{ borderColor: 'rgba(148,163,184,0.3)', color: 'var(--text-secondary)' }}>
+            {/* <a href="/cv.pdf" download className="btn-outline" style={{ borderColor: 'rgba(148,163,184,0.3)', color: 'var(--text-secondary)' }}>
               <Download size={16} /> Download CV
-            </a>
+            </a> */}
           </div>
 
           {/* Social */}
