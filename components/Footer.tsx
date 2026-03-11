@@ -11,9 +11,9 @@ const footerLinks = [
 ];
 
 const socialLinks = [
-  { icon: Github, href: 'https://github.com/thashreef', label: 'GitHub' },
-  { icon: Linkedin, href: 'https://linkedin.com/in/thashreef', label: 'LinkedIn' },
-  { icon: Mail, href: 'mailto:thashreef@email.com', label: 'Email' },
+  { icon: Github, href: 'https://github.com/thahsree', label: 'GitHub' },
+  { icon: Linkedin, href: 'https://linkedin.com/in/thashreefch', label: 'LinkedIn' },
+  { icon: Mail, href: 'mailto:chthashreef22@email.com', label: 'Email' },
 ];
 
 export default function Footer() {

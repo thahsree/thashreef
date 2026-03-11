@@ -81,12 +81,12 @@ export default function Navbar() {
               </Link>
             ))}
             <div style={{ width: 1, height: 24, background: 'var(--border-subtle)', margin: '0 8px' }} />
-            <a href="https://github.com/thashreef" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)', transition: 'color 0.2s', padding: 8, borderRadius: 8, display: 'flex' }}
+            <a href="https://github.com/thahsree" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)', transition: 'color 0.2s', padding: 8, borderRadius: 8, display: 'flex' }}
               onMouseEnter={e => (e.currentTarget.style.color = 'var(--accent-cyan)') as unknown as void}
               onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-secondary)') as unknown as void}>
               <Github size={20} />
             </a>
-            <a href="https://linkedin.com/in/thashreef" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)', transition: 'color 0.2s', padding: 8, borderRadius: 8, display: 'flex' }}
+            <a href="https://linkedin.com/in/thashreefch" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)', transition: 'color 0.2s', padding: 8, borderRadius: 8, display: 'flex' }}
               onMouseEnter={e => (e.currentTarget.style.color = '#0a66c2') as unknown as void}
               onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-secondary)') as unknown as void}>
               <Linkedin size={20} />
@@ -126,10 +126,10 @@ export default function Navbar() {
           </Link>
         ))}
         <div style={{ display: 'flex', gap: 16, marginTop: 32 }}>
-          <a href="https://github.com/thashreef" target="_blank" rel="noopener noreferrer" className="btn-outline">
+          <a href="https://github.com/thahsree"  target="_blank" rel="noopener noreferrer" className="btn-outline">
             <Github size={18} /> GitHub
           </a>
-          <a href="https://linkedin.com/in/thashreef" target="_blank" rel="noopener noreferrer" className="btn-primary">
+          <a href="https://linkedin.com/in/thashreefch" target="_blank" rel="noopener noreferrer" className="btn-primary">
             <Linkedin size={18} /> LinkedIn
           </a>
         </div>

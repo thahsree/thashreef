@@ -107,13 +107,13 @@ export default function Hero() {
 
           {/* Social */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 20, animation: 'fade-in-up 0.6s ease 0.5s both' }}>
-            <a href="https://github.com/thashreef" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: 6, textDecoration: 'none', fontSize: '0.9rem', transition: 'color 0.2s' }}
+            <a href="https://github.com/thahsree" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: 6, textDecoration: 'none', fontSize: '0.9rem', transition: 'color 0.2s' }}
               onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = 'var(--text-primary)'}
               onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = 'var(--text-muted)'}>
               <Github size={18} /> GitHub
             </a>
             <div style={{ width: 4, height: 4, borderRadius: '50%', background: 'var(--border-subtle)' }} />
-            <a href="https://linkedin.com/in/thashreef" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: 6, textDecoration: 'none', fontSize: '0.9rem', transition: 'color 0.2s' }}
+            <a href="https://linkedin.com/in/thashreefch" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: 6, textDecoration: 'none', fontSize: '0.9rem', transition: 'color 0.2s' }}
               onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = 'var(--text-primary)'}
               onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = 'var(--text-muted)'}>
               <Linkedin size={18} /> LinkedIn

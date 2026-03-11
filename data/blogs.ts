@@ -1,28 +1,28 @@
 export interface Blog {
-    slug: string;
-    title: string;
-    excerpt: string;
-    content: string;
-    category: string;
-    tags: string[];
-    readTime: number;
-    date: string;
-    coverEmoji: string;
-    coverColor: string;
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  category: string;
+  tags: string[];
+  readTime: number;
+  date: string;
+  coverEmoji: string;
+  coverColor: string;
 }
 
 export const blogs: Blog[] = [
-    {
-        slug: 'civil-engineer-to-software-developer',
-        title: 'From Civil Engineer to Software Developer: My Unconventional Journey',
-        excerpt: 'How I traded blueprints for code, and why the best engineers aren\'t always the ones with CS degrees.',
-        category: 'Career',
-        tags: ['Career Change', 'Self-taught', 'MERN Stack', 'Personal'],
-        readTime: 8,
-        date: '2025-12-15',
-        coverEmoji: '🏗️',
-        coverColor: 'cyan',
-        content: `
+  {
+    slug: 'civil-engineer-to-software-developer',
+    title: 'From Civil Engineer to Software Developer: My Unconventional Journey',
+    excerpt: 'How I traded blueprints for code, and why the best engineers aren\'t always the ones with CS degrees.',
+    category: 'Career',
+    tags: ['Career Change', 'Self-taught', 'MERN Stack', 'Personal'],
+    readTime: 8,
+    date: '2025-12-15',
+    coverEmoji: '🏗️',
+    coverColor: 'cyan',
+    content: `
 # From Civil Engineer to Software Developer: My Unconventional Journey
 
 Not every developer's story starts with a computer science degree and a love for algorithms from childhood. Mine started on a construction site in Bangalore.
@@ -73,18 +73,18 @@ For anyone considering a career change into tech: **the field rewards skills, no
 
 If my story resonates with you, feel free to reach out. I'm always happy to connect with fellow learners.
     `,
-    },
-    {
-        slug: 'why-mern-stack-startups',
-        title: 'Why MERN Stack is Perfect for Startups in 2025',
-        excerpt: 'Speed, cost-efficiency, and a unified language ecosystem make MERN the go-to choice for early-stage startups.',
-        category: 'Development',
-        tags: ['MERN', 'Node.js', 'React', 'Startups'],
-        readTime: 6,
-        date: '2025-11-20',
-        coverEmoji: '🚀',
-        coverColor: 'violet',
-        content: `
+  },
+  {
+    slug: 'why-mern-stack-startups',
+    title: 'Why MERN Stack is Perfect for Startups in 2025',
+    excerpt: 'Speed, cost-efficiency, and a unified language ecosystem make MERN the go-to choice for early-stage startups.',
+    category: 'Development',
+    tags: ['MERN', 'Node.js', 'React', 'Startups'],
+    readTime: 6,
+    date: '2025-11-20',
+    coverEmoji: '🚀',
+    coverColor: 'violet',
+    content: `
 # Why MERN Stack is Perfect for Startups in 2025
 
 Every startup founder faces the same question early on: **What tech stack should we build on?** After shipping multiple products, I keep coming back to MERN — MongoDB, Express, React, Node.js.
@@ -108,7 +108,7 @@ In early stages, your data model changes weekly. MongoDB's flexible schema lets 
 const user = new User({
   name: "Thashreef",
   role: "developer",
-  githubUrl: "https://github.com/thashreef" // added later, no migration needed
+  githubUrl: "https://github.com/thahsree" // added later, no migration needed
 });
 \`\`\`
 
@@ -148,18 +148,18 @@ For 90% of SaaS products, MERN is an excellent, proven choice. Start with it, va
 
 Happy building! 🚀
     `,
-    },
-    {
-        slug: 'react-native-first-app',
-        title: 'Building Your First React Native App: A Complete Guide',
-        excerpt: 'From zero to a working iOS/Android app using React Native and Expo — step by step for web developers.',
-        category: 'Mobile',
-        tags: ['React Native', 'Expo', 'Mobile Dev', 'Tutorial'],
-        readTime: 10,
-        date: '2025-10-05',
-        coverEmoji: '📱',
-        coverColor: 'pink',
-        content: `
+  },
+  {
+    slug: 'react-native-first-app',
+    title: 'Building Your First React Native App: A Complete Guide',
+    excerpt: 'From zero to a working iOS/Android app using React Native and Expo — step by step for web developers.',
+    category: 'Mobile',
+    tags: ['React Native', 'Expo', 'Mobile Dev', 'Tutorial'],
+    readTime: 10,
+    date: '2025-10-05',
+    coverEmoji: '📱',
+    coverColor: 'pink',
+    content: `
 # Building Your First React Native App: A Complete Guide
 
 If you know React, you're closer to building mobile apps than you think. React Native lets you write **one codebase** that runs on both iOS and Android.
@@ -264,18 +264,18 @@ npx eas submit --platform android  # submits to Play Store
 
 Your first app is just a few commands away. Start simple, ship early, iterate often! 📱
     `,
-    },
-    {
-        slug: 'rest-apis-nodejs-express',
-        title: 'Building REST APIs with Node.js & Express: Best Practices',
-        excerpt: 'A practical guide to designing, building, and securing production-ready REST APIs using Node.js and Express.',
-        category: 'Backend',
-        tags: ['Node.js', 'Express', 'API', 'Backend', 'MongoDB'],
-        readTime: 9,
-        date: '2025-09-12',
-        coverEmoji: '⚙️',
-        coverColor: 'green',
-        content: `
+  },
+  {
+    slug: 'rest-apis-nodejs-express',
+    title: 'Building REST APIs with Node.js & Express: Best Practices',
+    excerpt: 'A practical guide to designing, building, and securing production-ready REST APIs using Node.js and Express.',
+    category: 'Backend',
+    tags: ['Node.js', 'Express', 'API', 'Backend', 'MongoDB'],
+    readTime: 9,
+    date: '2025-09-12',
+    coverEmoji: '⚙️',
+    coverColor: 'green',
+    content: `
 # Building REST APIs with Node.js & Express: Best Practices
 
 A poorly designed API can haunt a project for years. Let's build one that's clean, secure, and scalable.
@@ -401,18 +401,18 @@ app.use((err, req, res, next) => {
 
 A well-built API is invisible — users just experience a fast, reliable product. ⚙️
     `,
-    },
-    {
-        slug: 'first-dev-job-without-cs-degree',
-        title: 'How I Got My First Developer Job Without a CS Degree',
-        excerpt: 'The exact steps, projects, and mindset shifts that helped me land a frontend developer role with a civil engineering background.',
-        category: 'Career',
-        tags: ['Career', 'Self-taught', 'Job Search', 'Portfolio'],
-        readTime: 7,
-        date: '2025-08-18',
-        coverEmoji: '💼',
-        coverColor: 'violet',
-        content: `
+  },
+  {
+    slug: 'first-dev-job-without-cs-degree',
+    title: 'How I Got My First Developer Job Without a CS Degree',
+    excerpt: 'The exact steps, projects, and mindset shifts that helped me land a frontend developer role with a civil engineering background.',
+    category: 'Career',
+    tags: ['Career', 'Self-taught', 'Job Search', 'Portfolio'],
+    readTime: 7,
+    date: '2025-08-18',
+    coverEmoji: '💼',
+    coverColor: 'violet',
+    content: `
 # How I Got My First Developer Job Without a CS Degree
 
 The job market for developers is competitive. But it's also surprisingly meritocratic — companies care about what you can *build*, not just where you studied.
@@ -489,18 +489,18 @@ But the compound effect of consistent building is real. Your 100th day of coding
 
 Now I work at Zysk Technologies as a Frontend Developer, and the journey was absolutely worth it. 💼
     `,
-    },
-    {
-        slug: 'web-performance-optimization',
-        title: 'Web Performance Optimization: Tips from a Full-Stack Developer',
-        excerpt: 'Practical techniques to make your web apps lightning fast — from Core Web Vitals to lazy loading and beyond.',
-        category: 'Development',
-        tags: ['Performance', 'Next.js', 'Web Vitals', 'Optimization'],
-        readTime: 8,
-        date: '2025-07-30',
-        coverEmoji: '⚡',
-        coverColor: 'green',
-        content: `
+  },
+  {
+    slug: 'web-performance-optimization',
+    title: 'Web Performance Optimization: Tips from a Full-Stack Developer',
+    excerpt: 'Practical techniques to make your web apps lightning fast — from Core Web Vitals to lazy loading and beyond.',
+    category: 'Development',
+    tags: ['Performance', 'Next.js', 'Web Vitals', 'Optimization'],
+    readTime: 8,
+    date: '2025-07-30',
+    coverEmoji: '⚡',
+    coverColor: 'green',
+    content: `
 # Web Performance Optimization: Tips from a Full-Stack Developer
 
 A fast website isn't a luxury — it's a competitive advantage. Studies show:
@@ -626,5 +626,5 @@ Load critical CSS inline, defer the rest. Next.js does this automatically. For c
 
 Performance is a feature. Ship fast, stay fast. ⚡
     `,
-    },
+  },
 ];
