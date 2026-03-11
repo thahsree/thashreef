@@ -21,7 +21,7 @@ function getAutoReply(input: string): string {
   if (lower.includes('service') || lower.includes('offer') || lower.includes('build')) return faqs[0].a;
   if (lower.includes('stack') || lower.includes('tech') || lower.includes('technology')) return faqs[1].a;
   if (lower.includes('freelance') || lower.includes('hire') || lower.includes('available')) return faqs[2].a;
-  if (lower.includes('charge') || lower.includes('rate') || lower.includes('cost') || lower.includes('price')) return faqs[3].a;
+  if (lower.includes('charge') || lower.includes('amount') ||  lower.includes('rate') || lower.includes('cost') || lower.includes('price')) return faqs[3].a;
   if (lower.includes('experience') || lower.includes('about') || lower.includes('background')) return faqs[4].a;
   if (lower.includes('contact') || lower.includes('reach') || lower.includes('email') || lower.includes('whatsapp')) return faqs[5].a;
   return "Thanks for reaching out! 😊 For specific questions, feel free to use the Contact page or WhatsApp me at +91 7025504042. You can also pick one of the quick questions above!";
